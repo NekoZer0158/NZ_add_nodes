@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://beawolkc4ylly"]
+
+[ext_resource type="Script" path="res://NZ_add_nodes/Main_script.gd" id="1_snsri"]
+[ext_resource type="Script" path="res://NZ_add_nodes/Moving_marker2D.gd" id="2_6uxka"]
+[ext_resource type="Script" path="res://NZ_add_nodes/Restart_button.gd" id="3_t2neh"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vbx03"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ripsr"]
+size = Vector2(1.04, 1.04)
+
+[node name="Main" type="Node"]
+script = ExtResource("1_snsri")
+
+[node name="Marker2DTop" type="Marker2D" parent="."]
+position = Vector2(291, 334)
+script = ExtResource("2_6uxka")
+random_speed = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Marker2DTop"]
+modulate = Color(1, 0.316406, 0.316406, 1)
+scale = Vector2(25, 25)
+texture = SubResource("CanvasTexture_vbx03")
+
+[node name="Area2D" type="Area2D" parent="Marker2DTop"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marker2DTop/Area2D"]
+scale = Vector2(25, 25)
+shape = SubResource("RectangleShape2D_ripsr")
+metadata/_edit_lock_ = true
+
+[node name="Marker2DBottom" type="Marker2D" parent="."]
+position = Vector2(291, 434)
+script = ExtResource("2_6uxka")
+
+[node name="Sprite2D" type="Sprite2D" parent="Marker2DBottom"]
+modulate = Color(0.316406, 0.455261, 1, 1)
+scale = Vector2(25, 25)
+texture = SubResource("CanvasTexture_vbx03")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="Marker2DBottom"]
+scale = Vector2(0.2, 1)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 11.0
+offset_top = 558.0
+offset_right = 267.0
+offset_bottom = 634.0
+focus_mode = 0
+text = "restart"
+script = ExtResource("3_t2neh")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
