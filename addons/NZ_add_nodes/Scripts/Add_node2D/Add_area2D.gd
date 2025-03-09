@@ -38,6 +38,16 @@ static func add_second_step(created_node:Node2D,collision_shape:CollisionShape2D
 			if other_args.size() >= 3:
 				if other_args[2] is Shape2D:
 					collision_shape.shape = other_args[2]
+					if other_args.size() >= 4:
+						if other_args[2] is CircleShape2D:
+							if typeof(other_args[3]) == TYPE_FLOAT:
+								collision_shape.shape.radius = other_args[3]
+							else:
+								push_error("Wrong type of second step argument 2")
+						elif other_args[2] is RectangleShape2D:
+							if typeof(other_args[3]) == TYPE_VECTOR2:
+								collision_shape.shape.size = other_args[3]
+							else:
+								push_error("Wrong type of second step argument 2")
 				else:
 					push_error("Wrong type of second step argument 2")
-				# TODO add here other_args[3], so radius/size of a collision could be changed

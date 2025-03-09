@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://beawolkc4ylly"]
 
-[ext_resource type="Script" path="res://NZ_add_nodes/Main_script.gd" id="1_snsri"]
-[ext_resource type="Script" path="res://NZ_add_nodes/Moving_marker2D.gd" id="2_6uxka"]
-[ext_resource type="Script" path="res://NZ_add_nodes/Restart_button.gd" id="3_t2neh"]
+[ext_resource type="Script" uid="uid://0qlbw5afe7df" path="res://NZ_add_nodes/Main_script.gd" id="1_snsri"]
+[ext_resource type="Script" uid="uid://cbjdycbh4g458" path="res://NZ_add_nodes/Moving_marker2D.gd" id="2_6uxka"]
+[ext_resource type="Script" uid="uid://dtkdb7ukwn6hm" path="res://NZ_add_nodes/Restart_button.gd" id="3_t2neh"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_vbx03"]
 

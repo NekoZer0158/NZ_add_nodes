@@ -22,7 +22,7 @@ func add_marker2D() -> void:
 	new_marker.add_child(new_sprite)
 
 func add_area2D() -> void:
-	var new_area2D : Area2D= Add_area2D.add(self,[Vector2(1,6),Vector2(900,330),RectangleShape2D.new()])
+	var new_area2D : Area2D= Add_area2D.add(self,[Vector2(1,6),Vector2(900,330),RectangleShape2D.new(),Vector2(randf_range(10.0,20.0),randf_range(15.0,50.0))])
 	new_area2D.area_entered.connect(_on_area2D_area_entered)
 
 func add_visibilityenabler() -> void:
